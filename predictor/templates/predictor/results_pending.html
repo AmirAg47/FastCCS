@@ -1,0 +1,55 @@
+{% extends 'predictor/base.html' %}
+
+{% block title %}Prediction In Progress{% endblock %}
+
+{% block content %}
+<section class="wrapper style1">
+    <div class="container">
+        <header class="major">
+            <h2>Processing Prediction</h2>
+        </header>
+        <p>Please wait while we compute your predictions...</p>
+        
+        <div id="progress-container" style="margin: 20px 0;">
+            <progress id="progress-bar" max="100" value="0" style="width: 100%; height: 30px;"></progress>
+            <p id="status-text">Preparing...</p>
+        </div>
+
+        <div id="download-link" style="display: none;">
+            <p>Your predictions are ready. You can download the results 
+            <a id="result-url" href="#">here</a>.</p>
+            <p><strong>Note:</strong> The results file will be deleted from the server after 5 minutes.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    const resultUrl = "{{ results_file_url }}";
+    const progressBar = document.getElementById("progress-bar");
+    const statusText = document.getElementById("status-text");
+    const downloadLink = document.getElementById("download-link");
+    const resultAnchor = document.getElementById("result-url");
+
+    let progress = 0;
+
+    const checkInterval = setInterval(() => {
+        fetch(resultUrl, { method: 'HEAD' }).then(response => {
+            if (response.ok) {
+                clearInterval(checkInterval);
+                progressBar.value = 100;
+                statusText.textContent = "Prediction complete.";
+                resultAnchor.href = resultUrl;
+                downloadLink.style.display = "block";
+            } else {
+                progress = Math.min(progress + 5, 95);
+                progressBar.value = progress;
+                statusText.textContent = `Computing... (${progress}%)`;
+            }
+        }).catch(() => {
+            progress = Math.min(progress + 5, 95);
+            progressBar.value = progress;
+            statusText.textContent = `Computing... (${progress}%)`;
+        });
+    }, 2000);
+</script>
+{% endblock %}

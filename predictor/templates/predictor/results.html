@@ -1,0 +1,15 @@
+{% extends 'predictor/base.html' %}
+
+{% block title %}Prediction Results{% endblock %}
+
+{% block content %}
+<section class="wrapper style1">
+    <div class="container">
+        <header class="major">
+            <h2>Prediction Results</h2>
+        </header>
+            <p>Your predictions have been saved. You can download the results <a href="{{ results_file_url }}">here</a>.</p>
+            <p><strong>Note:</strong> The results file will be deleted from the server after 20 seconds.</p>
+    </div>
+</section>
+{% endblock %}

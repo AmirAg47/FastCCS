@@ -1,7 +1,7 @@
 
 #  FastCCS
 
-> **FastCCS** is a deep learning-based web platform for predicting Molecular Collision Cross Section (CCS) values from molecular SMILES and adduct ions.  
+> **FastCCS** is an AI-based web platform for predicting Molecular Collision Cross Section (CCS) values from molecular SMILES and adduct ions.  
 > It leverages state-of-the-art models to offer real-time predictions via a simple web interface.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
@@ -23,11 +23,11 @@
 
 ## 🧪 Features
 
-- Predict CCS from SMILES + adduct ion.
+- Predict CCS from SMILES + adduct ion for Ion Mobility Spectrometry (IMS)
 - Real-time prediction via web interface.
 - Integrated with trained models 
 - Modular and extensible design.
-
+- Object-oriented molecular descriptors 
 ---
 
 ## ⚙️ Installation & Setup
@@ -53,7 +53,7 @@ If you prefer to clone the repository directly to your system, you can use Git. 
 
    ```bash
    git clone https://github.com/AmirAg47/FastCCS.git
-   cd FastCCS
+
 
 ### 2. Create virtual environment
 - Go to the place where you downloaded FasstCCS,

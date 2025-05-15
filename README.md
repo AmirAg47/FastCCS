@@ -63,6 +63,7 @@ cd FastCCS
 python -m venv venv
 ```
 Then:
+
 🔹 On Windows: 
 ```bash
 venv\Scripts\activate

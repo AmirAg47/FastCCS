@@ -18,7 +18,7 @@
  ░███  ░     ███░░███  ░░░░███  ░███ ███░░███     ███░░███     ███ ███    ░███
  █████      ░░████████ ██████   ░░█████  ░░█████████  ░░█████████ ░░█████████ 
 ░░░░░        ░░░░░░░░ ░░░░░░     ░░░░░    ░░░░░░░░░    ░░░░░░░░░   ░░░░░░░░░
-             A Molecular Collision Cross Section Predictor | by Amir Aghajan
+                                 A Molecular Collision Cross Section Predictor
 ```
 
 ## 🧪 Features
@@ -62,6 +62,7 @@ If you prefer to clone the repository directly to your system, you can use Git. 
 cd FastCCS
 python -m venv venv
 ```
+Then:
 🔹 On Windows: 
 ```bash
 venv\Scripts\activate
@@ -99,11 +100,12 @@ http://127.0.0.1:8000/predict/
 ```
 FastCCS/
 │
+├── PepSMILES/            # Peptides to SMILES converter
 ├── ccspredictor/         # Main Django app
+├── model training/       # Model Training codes and molecular descriptors
 ├── models/               # Trained model
 ├── predictor/            # Prediction logic
 ├── static/               # Static CSS/JS assets
-├── media/                # Files and result CSV
 ├── manage.py             # Django entry point
 ├── requirements.txt      # Python dependencies
 └── README.md             # You're here!
@@ -123,8 +125,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ---
 
-## ✉️ Contact
-
-Feel free to reach out via GitHub or raise an issue.
-
-Happy predicting! ⚗️✨
+## 📚 Reference
+ This project is based on the following research article:

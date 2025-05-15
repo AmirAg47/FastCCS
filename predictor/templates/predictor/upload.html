@@ -1,0 +1,37 @@
+{% extends 'predictor/base.html' %}
+{% load static %}
+{% block title %}Upload CSV{% endblock %}
+
+{% block content %}
+<section class="wrapper style1">
+    <div class="container">
+        <header class="major">
+            <p>Accurately and rapidly predict molecular collision cross section, <br>Just use the example CSV file, fill it out, and upload it for prediction.<br>
+            <h3>Upload CSV for Prediction</h3>
+        </header>
+
+        <form method="post" enctype="multipart/form-data" id="uploadForm">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload</button>
+        </form>
+
+        <p>
+            <a href="data:text/csv;charset=utf-8,Smiles,Adduct%0ACC%3DCCC%3DCCC%3DCCC%3DCCC%3DCCC%3DCCC%3DCCC%28%3DO%29OCC%28COC%28%3DO%29CC%3DCCC%3DCCC%3DCCC%3DCCC%3DCCC%3DCCC%3DCC%29OC%28%3DO%29CC%3DCCC%3DCCC%3DCCC%3DCCC%3DCCC%3DCCC%3DCC%2C%5BM%2BNa%5D%2B%0A" download="example.csv">
+                Download example CSV file
+            </a>
+        </p>
+    </div>
+</section>
+
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        var fileInput = document.querySelector('input[type="file"]');
+        var file = fileInput.files[0];
+        if (file.size > 2 * 1024 * 1024) {  // 2MB in bytes
+            alert('The file size exceeds the limit of 2MB.');
+            event.preventDefault();
+        }
+    });
+</script>
+{% endblock %}

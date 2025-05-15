@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>{% block title %}Eventually by HTML5 UP{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    {% block extra_head %}{% endblock %}
+    <style>
+        /* Ensure padding and border are included in width and height calculations */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 140%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background: #000000;
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0; /* Ensure no margin pushes header out of view */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        header ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            list-style: none;
+            margin: 0; /* Reset margin to avoid unintended spacing */
+        }
+        header ul li {
+            margin: 0 1rem;
+        }
+        header ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+        }
+        .wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+        }
+        footer {
+            background: #000000;
+            color: #ffffff;
+            padding: 1rem;
+            text-align: center;
+            width: 89%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .icons {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .icons li {
+            display: inline;
+        }
+        .icons a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        @media (max-width: 600px) {
+            .icons a {
+                font-size: 1.2rem;
+            }
+            header ul {
+                flex-direction: column;
+            }
+            header ul li {
+                margin: 0.5rem 0;
+            }
+            header ul li a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <!-- Header -->
+    <header id="header">
+        <h1>FASTCCS</h1>
+        <ul>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'predict' %}">Predict</a></li>
+        </ul>
+    </header>
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- Main Content -->
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/amir-aghajan/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/AmirAg47" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="mailto:amir.aghajan@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>copyright &copy; <span id="current-year"></span> FastCCS </li><li>Credits: <a href="http://fastccs.com">FASTCCS</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block extra_scripts %}{% endblock %}
+<script>
+  // Automatically set the current year
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

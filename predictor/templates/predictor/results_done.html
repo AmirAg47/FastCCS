@@ -1,0 +1,16 @@
+<!-- templates/predictor/results_done.html -->
+{% extends 'predictor/base.html' %}
+
+{% block title %}Prediction Results{% endblock %}
+
+{% block content %}
+<section class="wrapper style1">
+    <div class="container">
+        <header class="major">
+            <h2>Prediction Results</h2>
+        </header>
+        <p>{{ message }}</p>
+        <p>Your predictions have been saved. You can download the results <a href="{{ results_file_url }}" download>here</a>.</p>
+           </div>
+</section>
+{% endblock %}

@@ -1,0 +1,1 @@
+from ccspredictor.wsgi import application

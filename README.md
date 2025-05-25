@@ -51,8 +51,8 @@ If you prefer to clone the repository directly to your system, you can use Git. 
 - Open a terminal (Command Prompt, PowerShell, or any terminal of your choice).
 - Run the following commands:
 
-   ```bash
-   git clone https://github.com/AmirAg47/FastCCS.git
+```bash
+git clone https://github.com/AmirAg47/FastCCS.git
 
 
 ### 2. Create virtual environment

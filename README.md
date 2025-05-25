@@ -52,7 +52,7 @@ If you prefer to clone the repository directly to your system, you can use Git. 
 - Run the following commands:
 
   ```bash
-git clone https://github.com/AmirAg47/FastCCS.git
+ git clone https://github.com/AmirAg47/FastCCS.git
 
 
 ### 2. Create virtual environment

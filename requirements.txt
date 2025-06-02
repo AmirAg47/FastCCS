@@ -56,7 +56,6 @@ pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 pytz==2024.1
 rdkit==2024.3.3
-redis==5.2.0
 requests==2.32.3
 requests-oauthlib==2.0.0
 rich==13.9.4

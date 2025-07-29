@@ -352,6 +352,16 @@ def predict_data(model, data, scaler, kmeans, feature_indices=None) -> pd.DataFr
     result_df['Adduct'] = smiles_and_adduct['Adduct']
     result_df['m/z'] = smiles_and_adduct['m/z']
     result_df['Cluster'] = cluster  # Add the cluster column from the KMeans model
+    cluster_names = {
+    0: "PFAS",
+    1: "Lipid",
+    2: "Small Molecule",
+    3: "Medium Peptide",
+    4: "Short Peptide",
+    5: "Long Peptide",
+    6: "Lipid"
+    }
+    result_df['Cluster'] = result_df['Cluster'].map(cluster_names)
     # Select the required columns ('Smiles', 'Adduct', and 'Predictions')
     result_df = result_df[['Smiles', 'Adduct', 'CCS Å²', 'm/z', 'Cluster']]
     

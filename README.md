@@ -128,3 +128,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## 📚 Reference
  This project is based on the following research article:
+https://doi.org/10.1021/acs.analchem.5c06101
